@@ -53,11 +53,13 @@ app.get("/posts/:postName", function(req, res) {
 
     if (storedTitle === requestedTitle) {
       console.log("Match found!");
-    } else {
-      console.log("No match :(");
+      res.render("post", {
+        title: post.title,
+        content: post.content
+      });
     }
-  });
 
+    });
 });
 
 
